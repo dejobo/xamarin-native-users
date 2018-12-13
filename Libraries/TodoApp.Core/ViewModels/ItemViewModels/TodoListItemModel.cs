@@ -6,62 +6,14 @@ using TodoApp.Core.Models;
 
 namespace TodoApp.Core.ViewModels.ItemViewModels
 {
-    public class TodoListItemModel : ItemBaseViewModel<TodoList>
+    public class TodoListItemModel : ItemBaseViewModel<User>
     {
-        public TodoListItemModel(TodoList mModel) : base(mModel)
+        public TodoListItemModel(User mModel) : base(mModel)
         {
             
         }
 
-        public string ActiveText
-        {
-            get
-            {
-                if(Model.Active)
-                {
-                    return "Active";
-                }
-                else
-                {
-                    return "Unactive";
-                }
-            }
-        }
-
-        public string DoneText
-        {
-            get
-            {
-                if(Model != null)
-                {
-                    if (Model.TodoItems != null && Model.TodoItems.Count > 0)
-                    {
-                        var item_not_complete = Model.TodoItems.Where((TodoItem arg) => arg.Completed == false).Count();
-                        if (item_not_complete == 0)
-                        {
-                            return "(Done)";
-                        }
-                    }
-                }
-                return string.Empty;
-            }
-        }
-
-        public string NameListWithState
-        {
-            get
-            {
-                return $"{Model.Name} {DoneText}";
-            }
-        }
-
-        public override void OnEditModel()
-        {
-            this.RaisePropertyChanged(() => ActiveText);
-            this.RaisePropertyChanged(() => NameListWithState);
-        }
-
-        public Action<TodoList> InfoAction { get; set; } = null;
+        public Action<User> InfoAction { get; set; } = null;
 
         public ICommand InfoCommand
         {

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -95,8 +94,6 @@
     <Compile Include="Views\TodoListView.cs" />
     <Compile Include="Views\TodoDetailView.cs" />
     <Compile Include="Interface\DialogService.cs" />
-    <Compile Include="Views\TodoListItemView.cs" />
-    <Compile Include="Views\TodoItemDetailView.cs" />
     <Compile Include="Controls\StrikeStyleTextBinding.cs" />
     <Compile Include="Setup.cs" />
   </ItemGroup>
@@ -118,8 +115,6 @@
     <AndroidResource Include="Resources\layout\ProgressView.axml" />
     <AndroidResource Include="Resources\drawable\back.png" />
     <AndroidResource Include="Resources\drawable\add.png" />
-    <AndroidResource Include="Resources\layout\TodoListItemView.axml" />
-    <AndroidResource Include="Resources\layout\TodoItemDetailView.axml" />
     <AndroidResource Include="Resources\layout\TodoElementItem.axml" />
     <AndroidResource Include="Resources\layout\TodoListView.axml" />
   </ItemGroup>

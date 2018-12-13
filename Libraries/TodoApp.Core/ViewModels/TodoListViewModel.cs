@@ -38,36 +38,26 @@ namespace TodoApp.Core.ViewModels
             //var dialogService = Mvx.Resolve<IDialogService>();
             var service = Mvx.Resolve<ITodoService>();
             //var dialog = dialogService.ShowProgress();
-            var result = await service.GetFakeTodoListAsync();
+            var result = await service.GetUserListsAsync();
 
 
-            Todos = result.Select((TodoList arg) => new TodoListItemModel(arg)
+            Todos = result.Select((User arg) => new TodoListItemModel(arg)
             {
                 InfoAction = async (obj) => 
                 {
                     var todoDetail = new TodoDetailViewModel(_navigationService)
                     {
-                        Model = new TodoList()
+                        Model = new User()
                         {
-                            Name = obj.Name,
+                            Username = obj.Username,
                             Id = obj.Id,
-                            Active = obj.Active,
+                            Password = obj.Password,
                         },
                     };
                     await _navigationService.Navigate(todoDetail);
                 },
                 MoreAction = async (obj) => 
                 {
-                    var todoListItemViewModel = new TodoListItemViewModel(_navigationService)
-                    {
-                        Todo = new TodoList()
-                        {
-                            Name = obj.Name,
-                            Id = obj.Id,
-                            Active = obj.Active,
-                        },
-                    };
-                    await _navigationService.Navigate(todoListItemViewModel);
                 },
             }).ToList();
             //dialogService.DismissProgress(dialog);

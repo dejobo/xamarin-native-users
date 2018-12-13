@@ -1,41 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
+    android:padding="0dp"    
     local:MvxBind="Click MoreCommand;"
-    android:padding="10dp">
+    >
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/ContentTextSize"
             android:textColor="@color/Black"
-            android:lines="2"
-            local:MvxBind="Text NameListWithState"
+            local:MvxBind="Text Model.Username"
             android:singleLine="false" />
     </FrameLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_vertical"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            local:MvxBind="Text ActiveText"
-            android:textSize="@dimen/InfoTextSize" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:padding="0dp"
-            local:MvxBind="Click InfoCommand; Text Resources[Information];"
-            android:textSize="@dimen/InfoTextSize" />
-    </LinearLayout>
-</LinearLayout>
+    <View android:layout_width="match_parent"
+          android:background="@color/material_grey_300"
+          android:layout_gravity="bottom"
+          android:layout_height="1dp"/>
+    
+</FrameLayout>

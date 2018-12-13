@@ -36,4 +36,10 @@
     <data name="Completed" xml:space="preserve">
         <value>Completed</value>
     </data>
+    <data name="Username" xml:space="preserve">
+        <value>User Name</value>
+    </data>
+    <data name="Password" xml:space="preserve">
+        <value>Password</value>
+    </data>
 </root>

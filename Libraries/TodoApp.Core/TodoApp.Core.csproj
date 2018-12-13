@@ -19,6 +19,7 @@
     <Compile Remove="ViewModels\ItemViewModels\TodoListViewModel.cs" />
     <Compile Remove="ViewModels\ItemViewModels\TodoListViewModel.cs" />
     <Compile Remove="Localization\AppResourcesValueCombiner.cs" />
+    <Compile Remove="ViewModels\TodoItemDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\AppResources.resx">

@@ -2446,16 +2446,10 @@ namespace AppTodo.Droid
 			public const int TodoItem = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int TodoItemDetailView = 2130903091;
+			public const int TodoListView = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int TodoListItemView = 2130903092;
-			
-			// aapt resource value: 0x7f030035
-			public const int TodoListView = 2130903093;
-			
-			// aapt resource value: 0x7f030036
-			public const int tooltip = 2130903094;
+			public const int tooltip = 2130903092;
 			
 			static Layout()
 			{

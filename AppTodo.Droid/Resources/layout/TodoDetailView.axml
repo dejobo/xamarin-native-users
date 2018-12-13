@@ -48,11 +48,20 @@
             android:inputType="text"
             android:focusableInTouchMode="true"
             android:textSize="@dimen/ContentTextSize"
-            local:MvxBind="Hint Resources[Name]; Text Model.Name, Mode=TwoWay;" />
-        <CheckBox
-            android:layout_width="wrap_content"
+            local:MvxBind="Hint Resources[Username]; Text Model.Username, Mode=TwoWay;" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="15dp" />
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            local:MvxBind="Text Resources[Active]; Checked Model.Active, Mode=TwoWay;" />
+            android:gravity="left"
+            android:singleLine="true"
+            android:inputType="text"
+            android:focusableInTouchMode="true"
+            android:textSize="@dimen/ContentTextSize"
+            local:MvxBind="Hint Resources[Password]; Text Model.Password, Mode=TwoWay;"
+            android:password="true" />
         <View
             android:layout_width="1dp"
             android:layout_height="15dp" />
@@ -63,11 +72,5 @@
             android:layout_marginRight="10dp"
             local:MvxBind="Text Resources[Save]; Click SaveCommand;"
             android:textSize="@dimen/HeaderTextSize" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            local:MvxBind="Text Resources[Delete]; Click DeleteCommand; Enabled IsEnableDelete;" />
     </LinearLayout>
 </LinearLayout>

@@ -23,22 +23,15 @@ namespace TodoApp.Core.ViewModels
             {
                 return new MvxCommand(() =>
                 {
-                    if(string.IsNullOrEmpty(mModel.Name))
+                    if(string.IsNullOrEmpty(mModel.Username))
                     {
                         var dialogService = Mvx.Resolve<IDialogService>();
-                        dialogService.Alert("Please input name on form", "Todo", "Ok");
+                        dialogService.Alert("Please input name on form", "Exercise", "Ok");
                     }
                     else
                     {
                         var service = Mvx.Resolve<ITodoService>();
-                        if(mModel.Id > 0)
-                        {
-                            service.UpdateTodoListAsync(mModel);
-                        }
-                        else
-                        {
-                            service.AddTodoListAsync(mModel);
-                        }
+                        service.AddUserToListAsync(mModel);
                         _navigationService.Close(this);
                     }
 
@@ -56,7 +49,7 @@ namespace TodoApp.Core.ViewModels
                     dialogService.CustomAlert("Do you want to delete this?", "Todo", () =>
                       {
                             var service = Mvx.Resolve<ITodoService>();
-                            service.RemoveTodoListAsync(mModel);
+                            service.RemoveUserFromListAsync(mModel);
                             _navigationService.Close(this);
                       });
                    
@@ -66,17 +59,17 @@ namespace TodoApp.Core.ViewModels
         }
 
        
-        private TodoList mModel = null;
+        private User mModel = null;
 
         public TodoDetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             if(mModel == null)
             {
-                mModel = new TodoList();
+                mModel = new User();
             }
         }
 
-        public TodoList Model
+        public User Model
         {
             get
             {

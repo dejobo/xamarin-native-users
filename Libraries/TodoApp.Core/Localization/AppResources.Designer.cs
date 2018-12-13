@@ -94,5 +94,17 @@ namespace TodoApp.Core.Localization {
                 return ResourceManager.GetString("Completed", resourceCulture);
             }
         }
+        
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
+        
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
     }
 }
