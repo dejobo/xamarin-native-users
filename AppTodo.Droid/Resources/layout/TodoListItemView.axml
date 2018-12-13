@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/StrongBlue">
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left"
+            local:MvxBind="Click BackCommand"
+            android:padding="@dimen/TitleTextSize">
+            <ImageView
+                android:src="@drawable/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/TitleTextSize"
+            android:textColor="@color/White"
+            local:MvxBind="Text Todo.Name"
+            android:textStyle="bold" />
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            local:MvxBind="Click CreateNewCommand"
+            android:padding="@dimen/TitleTextSize">
+            <ImageView
+                android:src="@drawable/add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <MvvmCross.Platforms.Android.Binding.Views.MvxListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            local:MvxBind="ItemsSource TodoItems; ItemClick ItemSelectedCommand"
+            local:MvxItemTemplate="@layout/todoelementitem" />
+    </FrameLayout>
+</LinearLayout>
