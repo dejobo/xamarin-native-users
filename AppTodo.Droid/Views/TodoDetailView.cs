@@ -17,12 +17,12 @@ namespace AppTodo.Droid.Views
 
     [MvxActivityPresentation]
     [Activity(Label = "", Theme = "@style/AppTheme")]
-    public class TodoDetailView : MvxActivity
+    public class CreateUserView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.TodoDetailView);
+            SetContentView(Resource.Layout.CreateUserView);
         }
     }
 }

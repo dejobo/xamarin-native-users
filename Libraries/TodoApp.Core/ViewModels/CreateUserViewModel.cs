@@ -10,7 +10,7 @@ using TodoApp.Services.Todo;
 
 namespace TodoApp.Core.ViewModels
 {
-    public class TodoDetailViewModel : PageBaseViewModel
+    public class CreateUserViewModel : PageBaseViewModel
     {
         public override Task Initialize()
         {
@@ -61,7 +61,7 @@ namespace TodoApp.Core.ViewModels
        
         private User mModel = null;
 
-        public TodoDetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        public CreateUserViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             if(mModel == null)
             {

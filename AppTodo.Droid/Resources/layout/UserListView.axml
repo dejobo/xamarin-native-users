@@ -35,7 +35,7 @@
         <MvvmCross.Platforms.Android.Binding.Views.MvxListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            local:MvxBind="ItemsSource Todos; ItemClick ItemSelectedCommand"
-            local:MvxItemTemplate="@layout/todoitem" />
+            local:MvxBind="ItemsSource Users; ItemClick ItemSelectedCommand"
+            local:MvxItemTemplate="@layout/useritem" />
     </FrameLayout>
 </LinearLayout>

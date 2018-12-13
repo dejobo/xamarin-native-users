@@ -11,7 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using AppTodo.Droid.Interface;
+using AppTodo.Droid.Interfaces;
 using MvvmCross;
 using MvvmCross.Platforms.Android.Core;
 using MvvmCross.Platforms.Android.Views;

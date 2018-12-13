@@ -17,7 +17,7 @@ namespace TodoApp.Core
                 .AsInterfaces()  
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<TodoListViewModel>();
+            RegisterAppStart<UserListViewModel>();
         }
     }  
 }

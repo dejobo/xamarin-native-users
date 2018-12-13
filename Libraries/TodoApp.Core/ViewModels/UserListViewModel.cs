@@ -13,7 +13,7 @@ using TodoApp.Services.Todo;
 
 namespace TodoApp.Core.ViewModels
 {
-    public class TodoListViewModel : PageBaseViewModel
+    public class UserListViewModel : PageBaseViewModel
     {
         private string _title = "NewsReader";
         public string Title
@@ -27,53 +27,44 @@ namespace TodoApp.Core.ViewModels
             return base.Initialize();
         }
 
-        public TodoListViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        public UserListViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
         }
 
         private async void OnGetDataAsync()
         {
             //Fake Data
-            Todos = null;
+            Users = null;
             //var dialogService = Mvx.Resolve<IDialogService>();
-            var service = Mvx.Resolve<ITodoService>();
+            var service = Mvx.IoCProvider.Resolve<ITodoService>();
             //var dialog = dialogService.ShowProgress();
             var result = await service.GetUserListsAsync();
 
 
-            Todos = result.Select((User arg) => new TodoListItemModel(arg)
+            Users = result.Select((User arg) => new UserItemModel(arg)
             {
-                InfoAction = async (obj) => 
+                InfoAction =  (obj) => 
                 {
-                    var todoDetail = new TodoDetailViewModel(_navigationService)
-                    {
-                        Model = new User()
-                        {
-                            Username = obj.Username,
-                            Id = obj.Id,
-                            Password = obj.Password,
-                        },
-                    };
-                    await _navigationService.Navigate(todoDetail);
+
                 },
-                MoreAction = async (obj) => 
+                MoreAction =  (obj) => 
                 {
                 },
             }).ToList();
             //dialogService.DismissProgress(dialog);
         }
 
-        private List<TodoListItemModel> mTodos;
-        public List<TodoListItemModel> Todos
+        private List<UserItemModel> mUsers;
+        public List<UserItemModel> Users
         {
             get
             {
-                return mTodos;
+                return mUsers;
             }
             set
             {
-                mTodos = value;
-                this.RaisePropertyChanged(() => Todos);
+                mUsers = value;
+                this.RaisePropertyChanged(() => Users);
             }
         }
 
@@ -104,7 +95,7 @@ namespace TodoApp.Core.ViewModels
             {
                 return new MvxCommand(async () => 
                 {
-                    await _navigationService.Navigate<TodoDetailViewModel>();
+                    await _navigationService.Navigate<CreateUserViewModel>();
                 });
             }
         }

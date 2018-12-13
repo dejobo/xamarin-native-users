@@ -6,9 +6,9 @@ using TodoApp.Core.Models;
 
 namespace TodoApp.Core.ViewModels.ItemViewModels
 {
-    public class TodoListItemModel : ItemBaseViewModel<User>
+    public class UserItemModel : ItemBaseViewModel<User>
     {
-        public TodoListItemModel(User mModel) : base(mModel)
+        public UserItemModel(User mModel) : base(mModel)
         {
             
         }

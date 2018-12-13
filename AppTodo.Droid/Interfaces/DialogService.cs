@@ -7,7 +7,7 @@ using MvvmCross;
 using MvvmCross.Platforms.Android;
 using TodoApp.Core.Interface;
 
-namespace AppTodo.Droid.Interface
+namespace AppTodo.Droid.Interfaces
 {
     public class DialogService : IDialogService
     {
