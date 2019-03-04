@@ -1,3 +1,1 @@
-# Exercise2
-
-# xamarin-native-users
+# Xamarin Native for android using MVVM Corss
